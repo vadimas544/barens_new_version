@@ -20,39 +20,39 @@ function myFunction() {
 
 // Accordion
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+// var acc = document.getElementsByClassName("accordion");
+// var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
+// for (i = 0; i < acc.length; i++) {
+//     acc[i].addEventListener("click", function() {
+//         this.classList.toggle("active");
+//         var panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//             panel.style.display = "none";
+//         } else {
+//             panel.style.display = "block";
+//         }
+//     });
+// }
 
+
+// New accordion on Jquery
+
+$(document).ready(function() {
+  $('.accordion-item__trigger').click(function(){
+    const parent = $(this).parent();
+
+    if(parent.hasClass('accordion-item--active')) {
+      parent.removeClass('accordion-item--active');
+    } else {
+      $('.accordion-item').removeClass('accordion-item--active');
+      parent.addClass('accordion-item--active');
+    }
+});
+});
 // End Accordion
 
 // Timeline
 
-var el = document.getElementsByClassName("time");
-
-var j;
-
-for (j = 0; j < el.length; j++) {
-	el[j].addEventListener("click", function() {
-        this.classList.toggle("active_timeline");
-        var element = this.nextElementSibling;
-        if (element.style.display === "block") {
-            element.style.display = "none";
-        } else {
-            element.style.display = "block";
-        }
-    });
-}
 
 // End Timeline
